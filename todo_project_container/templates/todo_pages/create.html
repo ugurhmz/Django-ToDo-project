@@ -4,42 +4,43 @@
 
 {%block content %}
 
-<section  class="jumbotron jumbotron-fluid ">
+<section  class="jumbotron jumbotron-fluid bg-secondary ">
       <div class="container">
             
             <div class="d-flex h-100 flex-column text-light justify-content-center">
                   <h1 class="display-1 mx-auto"> <span class="text-danger">TO-DO</span class="font-weight-bold"> LIST</h1>
                   <p class="lead text-dark">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
                         incididunt 
-                        <span class="text-danger font-weight-bolder">ut labore et dolore magna aliqua.</span></p>
+                        <span class="text-white font-weight-bolder">ut labore et dolore magna aliqua.</span></p>
                   <div class="mt-4">
-                        <form>
+                        <form method="POST">
+                              {% csrf_token %}
                               <div class="form-group row">
                                 <label for="inputEmail3" class="col-sm-2 col-form-label mt-0">
-                                    <span class="text-dark font-weight-bolder">To-Do List</span>
+                                    <span class="text-white  font-weight-bolder">To-Do List</span>
                                 </label>
                                 <div class="col-sm-10">
-                                  <input type="email" class="form-control" id="inputEmail3">
+                                  <input type="text" class="form-control" name="title">
                                 </div>
                               </div>
                               <div class="form-group row">
                                 <label for="inputPassword3" class="col-sm-2 col-form-label">
-                                    <span class="text-dark font-weight-bolder">Description</span>
+                                    <span class="text-white  font-weight-bolder">Description</span>
                                 </label>
                                 <div class="col-sm-10">
-                                  <input type="password" class="form-control" id="inputPassword3">
+                                  <input type="text" class="form-control" name="description">
                                 </div>
                               </div>
                               
                               <div class="form-group row">
                                     <div class="col-sm-2">
-                                          <span class="text-dark font-weight-bold">is Finished ?</span>
+                                          <span class="text-white  font-weight-bold">is Finished ?</span>
                                     </div>
                                     <div class="col-sm-10 ">
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                            <label class="form-check-label " for="gridCheck1">
-                                                <span class="text-dark font-weight-bold">YES</span>
+                                            <input class="form-check-input" type="checkbox" id="gridCheck1" name="finished">
+                                            <label class="form-check-label" >
+                                                <span class="text-white  font-weight-bold">YES</span>
                                             </label>
                                           </div>
                                     </div>

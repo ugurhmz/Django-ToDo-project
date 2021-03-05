@@ -40,8 +40,12 @@
                 <td>{{ todo.title}}</td>
                 <td>{{todo.finished}}</td>
                 <td>{{ todo.date }}</td>
-                <td>Delete</td>
-                <td>Güncelle</td>
+                <td>
+                  <a class="btn btn btn-outline-danger" href="{% url 'delete' todo.id %}" role="button">Delete</a>
+                </td>
+                <td>
+                  <a class="btn btn-outline-primary" href="#" role="button">Güncelle</a>
+                </td>
               </tr>
              {% endfor %}
             </tbody>

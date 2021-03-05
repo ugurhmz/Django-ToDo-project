@@ -7,6 +7,7 @@ urlpatterns= [
 
       path('',views.index, name='index'),
       path('about/',views.about, name='about'),
-      path('create/',views.create, name='create')
+      path('create/',views.create, name="create"),
+      path("delete/<Todos_id>", views.delete, name='delete'),
 
 ]
