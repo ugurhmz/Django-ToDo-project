@@ -35,19 +35,40 @@
 
             <tbody>
                   
-             {% for todo in todo_list %}     
-              <tr>
-                <td>{{ todo.title}}</td>
-                <td>{{todo.finished}}</td>
-                <td>{{ todo.date }}</td>
-                <td>
-                  <a class="btn btn btn-outline-danger" href="{% url 'delete' todo.id %}" role="button">Delete</a>
-                </td>
-                <td>
-                  <a class="btn btn-outline-primary" href="#" role="button">Güncelle</a>
-                </td>
-              </tr>
-             {% endfor %}
+            {% for todo in todo_list %}    
+            {% if todo.finished %} 
+                  <tr>
+                        <td> <del>{{ todo.title}}</del></td>
+                        <td>
+                              <a class="btn btn-danger" href="{% url 'yes_finish' todo.id %}" role="button">Yes</a>
+                        </td>
+                        <td>{{ todo.date }}</td>
+                        <td>
+                        <a class="btn btn btn-outline-danger" href="{% url 'delete' todo.id %}" role="button">Delete</a>
+                        </td>
+                        <td>
+                        <a class="btn btn-outline-primary" href="{% url 'update' todo.id %}" role="button">Güncelle</a>
+                        </td>
+                  </tr>
+            {% else %}
+                  <tr>
+                        <td> {{ todo.title}}</td>
+                        <td>
+                        <a class="btn btn-warning" href="{% url 'no_finish' todo.id %}" role="button">No</a>
+                        
+                        </td>
+                        <td>{{ todo.date }}</td>
+                        <td>
+                        <a class="btn btn btn-outline-danger" href="{% url 'delete' todo.id %}" role="button">Delete</a>
+                        </td>
+                        <td>
+                        <a class="btn btn-outline-primary" href="{% url 'update' todo.id %}" role="button">Güncelle</a>
+                        </td>
+                  </tr>   
+
+            {% endif%}
+
+            {% endfor %}
             </tbody>
           </table>
           
