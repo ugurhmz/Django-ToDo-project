@@ -6,23 +6,52 @@
 
 
 {% block content %}
+          
+      <div id="yukselik" class="jumbotron  jumbotron-fluid border-top bg-dark">
 
-       <section class="dark-bg" id="hero">
-            <div class="container">
-           
-                  <div class="d-flex h-100 flex-column text-light justify-content-center">
-                        <h1 class="display-1"> <span class="text-danger">TO-DO</span>LIST</h1>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                              incididunt <span class="text-danger">ut labore et dolore magna aliqua.</span></p>
-                        
-                        <a href="{% url 'create' %}" class="btn  mt-5 w-50 mx-auto btn-outline-success font-weight-bold text-white">
-                              Create To-Do List
-                        </a>
-                  </div>                        
+            <div class="d-flex h-100 flex-column text-light justify-content-center text-center">
+                  <h1 class="display-1 "> <span class="text-danger">TO-DO</span>LIST</h1>
+                  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                        incididunt <span class="text-danger">ut labore et dolore magna aliqua.</span></p>
                   
-            </div>
-      </section>
+                  <a href="{% url 'create' %}" class="btn  mt-5 w-50 mx-auto btn-outline-success font-weight-bold text-white">
+                        Create To-Do List
+                  </a>
+            </div>                        
+            
+      </div>
+     
+    <div class="container mt-2">
+      <table class="table">
+            <thead >
+              <tr>
+                <th scope="col">To-do Name</th>
+                <th scope="col">Is Finished ?</th>
+                <th scope="col">Date and Time</th>
+                <th scope="col">Delete</th>
+                <th scope="col">Update</th>
+              </tr>
+            </thead>
+
+            <tbody>
+                  
+             {% for todo in todo_list %}     
+              <tr>
+                <td>{{ todo.title}}</td>
+                <td>{{todo.finished}}</td>
+                <td>{{ todo.date }}</td>
+                <td>Delete</td>
+                <td>Güncelle</td>
+              </tr>
+             {% endfor %}
+            </tbody>
+          </table>
+          
+      </div>
       
+      
+            
+
 
 {% endblock content %}
 
