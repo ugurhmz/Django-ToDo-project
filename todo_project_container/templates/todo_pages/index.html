@@ -7,15 +7,22 @@
 
 {% block content %}
 
-      <div class="jumbotron jumbotron-fluid  text-center mybg-dark">
+       <section class="dark-bg" id="hero">
             <div class="container">
-            <h1 class="display-4">TO-DO LIST</h1>
-            <p class="lead">Lorem ipsum Lorem ipsum dolor sit amet. sit amet.</p>
-            <button type="button" class="btn btn-outline-success font-weight-bolder text-dark">Create To-Do List</button>
+           
+                  <div class="d-flex h-100 flex-column text-light justify-content-center">
+                        <h1 class="display-1"> <span class="text-danger">TO-DO</span>LIST</h1>
+                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                              incididunt <span class="text-danger">ut labore et dolore magna aliqua.</span></p>
+                        
+                        <a href="{% url 'create' %}" class="btn  mt-5 w-50 mx-auto btn-outline-success font-weight-bold text-white">
+                              Create To-Do List
+                        </a>
+                  </div>                        
+                  
             </div>
-      </div>
-
-
-      <h1>My name is {{ name }}</h1>
+      </section>
+      
 
 {% endblock content %}
+

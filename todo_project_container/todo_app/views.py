@@ -3,9 +3,13 @@ from django.http import HttpResponse
 
 
 def index(request):
-      isim="Uğur HAMZAOĞLU"
-      return render(request,"todo_pages/index.html", {'name':isim}) 
+      
+      return render(request,"todo_pages/index.html") 
 
 
 def about(request):
       return render(request, "todo_pages/about.html")
+
+
+def create(request):
+      return render(request,"todo_pages/create.html")
